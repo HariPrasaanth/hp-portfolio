@@ -2,14 +2,15 @@ import React from "react";
 
 const About = () => {
   return (
-    <div className="rounded-lg shadow-md p-12 flex flex-col gap-4">
+    <div className="rounded-lg shadow-md p-6 sm:p-12 flex flex-col gap-4">
       <div>
-        <p className="text-[#022B3A] font-bold sm:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl">
+        <p className="text-[#2D2D2D] font-medium text-lg sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl">
           About Me
         </p>
       </div>
       <div>
-        <p className="text-[#5B6B79] text-xl/8">
+        <p className="text-[#5B6B79] text-sm/6 sm:text-md md:text-lg/8 lg:text-xl/8">
+          {/* <p className="text-xl/8"> */}
           <b> a passionate Full Stack Developer</b> specializing in building
           <b> scalable</b> and <b>efficient</b> web applications. With strong
           expertise in the
@@ -24,7 +25,7 @@ const About = () => {
         </p>
       </div>
       <div>
-        <p className="text-[#5B6B79] text-2xl">
+        <p className="text-[#5B6B79] text-md sm:text-lg md:text-xl lg:text-2xl">
           Let’s build something amazing together 🍻
         </p>
       </div>
