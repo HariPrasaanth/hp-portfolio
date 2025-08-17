@@ -28,7 +28,7 @@ const SkillSection = (props: SkillSectionProps) => {
         className="w-full text-left py-4 flex justify-between items-center"
         onClick={onToggle}
       >
-        <span className="text-md sm:text-xl font-medium text-[#022B3A] capitalize">
+        <span className="text-sm sm:text-xl font-medium text-[#022B3A] capitalize">
           {category}
         </span>
         <span className="text-2xl">{isOpen ? "−" : "+"}</span>
