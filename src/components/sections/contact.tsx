@@ -1,3 +1,4 @@
+"use client";
 import SendIcon from "@/icons/sendIcon";
 
 const Contact: React.FC = () => {
@@ -8,12 +9,20 @@ const Contact: React.FC = () => {
           Contact Me
         </p>
       </div>
-      <div className="p-4 w-full lg:w-1/2">
+      <form
+        className="p-4 w-full lg:w-1/2"
+        onSubmit={(e) => {
+          e.preventDefault();
+          // Add your submit action here
+          alert("Form submitted!");
+        }}
+      >
         <div className="mb-4">
           <input
             type="text"
             placeholder="Name"
             className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-sm"
+            required
           />
         </div>
         <div className="mb-4">
@@ -21,6 +30,7 @@ const Contact: React.FC = () => {
             type="email"
             placeholder="Email"
             className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-sm"
+            required
           />
         </div>
         <div className="mb-4">
@@ -29,10 +39,11 @@ const Contact: React.FC = () => {
               placeholder="Message"
               rows={4}
               className="w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder:text-sm"
+              required
             />
             <button
               type="button"
-              className="absolute bottom-2 right-2 bg-[#2D2D2D] text-white px-3 py-1 rounded hover:bg-blue-600 mb-2"
+              className="absolute bottom-2 right-2 bg-[#2D2D2D] text-white px-3 py-1 rounded hover:bg-blue-600 mb-2 cursor-pointer"
             >
               <p className="text-sm text-[#FFF]">Generate AI Message</p>
             </button>
@@ -41,7 +52,7 @@ const Contact: React.FC = () => {
         <div>
           <button
             type="submit"
-            className="bg-[#00BFA6] flex items-center gap-2 text-white px-6 py-2 rounded hover:bg-[#009e86] transition-colors"
+            className="bg-[#00BFA6] flex items-center gap-2 text-white px-6 py-2 rounded hover:bg-[#009e86] transition-colors cursor-pointer"
           >
             <p className="text-sm">Send</p>
             <div>
@@ -49,7 +60,7 @@ const Contact: React.FC = () => {
             </div>
           </button>
         </div>
-      </div>
+      </form>
     </div>
   );
 };
