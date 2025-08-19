@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "info": "Hari Prasaanth Suresh Babu",
+    "description": "Full Stack Developer skilled in MERN stack, experienced in building scalable web apps with clean code and performance focus."
+  },
+  {
+    "id": 2,
+    "info": "Skills & Technologies",
+    "description": "Experienced in frontend (JavaScript, React, Next), backend (Node.js, Express), databases (MySQL, MongoDB), and tools (Git, Postman)."
+  },
+  {
+    "id": 3,
+    "info": "Experience",
+    "description": "6 years in IT including roles from Junior Analyst to Senior Technical Consultant across QA, development, and leadership in companies like Infoview Technologies and Perficient India."
+  },
+  {
+    "id": 4,
+    "info": "Education",
+    "description": "Bachelor's degree in Software Development from St. Joseph's College, Trichy, awarded Gold Medal for academic excellence."
+  }
+]

@@ -5,6 +5,7 @@ import Experience from "@/components/sections/experience";
 import Hero from "@/components/sections/hero";
 import Projects from "@/components/sections/projects";
 import Skills from "@/components/sections/skills";
+import Chatbot from "@/components/chatbot/chatbot";
 
 export default function Home() {
   return (
@@ -72,13 +73,14 @@ export default function Home() {
         </section>
       </div>
       {/* Move to top floating icon */}
-      <button
+      {/* <button
         className="fixed bottom-6 right-6 bg-blue-600 text-white rounded-full p-3 shadow-lg hover:bg-blue-700 transition cursor-pointer"
         aria-label="Move to top"
         onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
       >
         ↑
-      </button>
+      </button> */}
+      <Chatbot />
     </>
   );
 }
