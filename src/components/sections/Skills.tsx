@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { SkillConstants } from "@/constants/skills";
-import SkillSection from "../common/skillSection";
+import SkillSection from "../common/SkillSection";
 
 const Skills = () => {
   const firstCategory = Object.keys(SkillConstants.knownSkills)[0];
