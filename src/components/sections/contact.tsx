@@ -184,10 +184,10 @@ const Contact: React.FC = () => {
           <div className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-4 h-full">
             <div className="mb-6">
               <h3 className="text-xl font-bold text-gray-800 mb-2">
-                Let's Connect!
+                Let&apos;s Connect!
               </h3>
               <p className="text-gray-600 text-sm">
-                Find me on these platforms and let's stay in touch
+                Find me on these platforms and let&apos;s stay in touch
               </p>
             </div>
 

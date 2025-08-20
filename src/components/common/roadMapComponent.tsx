@@ -1,6 +1,5 @@
 import { COLORS } from "@/constants/commonConstants";
 import EduIcon from "@/icons/eduIcon";
-import PromotionIcon from "@/icons/promotionIcon";
 import WorkIcon from "@/icons/workIcon";
 import {
   VerticalTimeline,

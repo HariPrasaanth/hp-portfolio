@@ -1,7 +1,7 @@
 "use client";
 import dynamic from "next/dynamic";
 
-const ExperienceSection = dynamic(() => import("../common/ExperienceRoadMap"), {
+const ExperienceSection = dynamic(() => import("../common/experienceRoadmap"), {
   ssr: false,
 });
 

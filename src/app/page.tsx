@@ -3,7 +3,6 @@ import About from "@/components/sections/about";
 import Contact from "@/components/sections/contact";
 import Experience from "@/components/sections/experience";
 import Hero from "@/components/sections/hero";
-import Projects from "@/components/sections/projects";
 import Skills from "@/components/sections/skills";
 import Chatbot from "@/components/chatbot/chatbot";
 
@@ -58,7 +57,7 @@ export default function Home() {
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // Call once to set initial state
     return () => window.removeEventListener("scroll", handleScroll);
-  }, []); // Empty dependency array to prevent re-creation
+  }, [activeSection]); // Empty dependency array to prevent re-creation
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);

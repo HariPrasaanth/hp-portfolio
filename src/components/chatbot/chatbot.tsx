@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./Chatbot.module.css";
+import Image from "next/image";
+import botImage from "../../../public/images/bot.png";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,8 +84,13 @@ const Chatbot = () => {
           onClick={handleToggleChatbot}
           className={`${styles.floatingIcon} ${isOpen ? styles.iconOpen : ""}`}
         >
-          <img
+          {/* <img
             src="/images/bot.png"
+            alt="AI Assistant"
+            className={styles.chatProfileIcon}
+          /> */}
+          <Image
+            src={botImage}
             alt="AI Assistant"
             className={styles.chatProfileIcon}
           />
@@ -102,7 +109,7 @@ const Chatbot = () => {
       {isOpen && (
         <div className={styles.chatWindow}>
           <div className={styles.chatHeader}>
-            <span>Hari's AI Assistant</span>
+            <span>Hari&apos;s AI Assistant</span>
             <button
               onClick={handleToggleChatbot}
               className={styles.closeButton}

@@ -1,5 +1,6 @@
 "use client";
 import { Skill } from "@/constants/skills";
+import Image from "next/image";
 import React, { useEffect, useRef, useState } from "react";
 
 interface SkillSectionProps {
@@ -46,10 +47,16 @@ const SkillSection = (props: SkillSectionProps) => {
               className="bg-[rgba(0,191,166,0.1)] p-4 flex flex-col items-center justify-center rounded"
             >
               <div className="w-[60px] h-[60px] mb-2">
-                <img
+                {/* <img
                   src={skill.icon}
                   alt={skill.name}
                   className="object-contain w-full h-full"
+                /> */}
+                <Image
+                  src={skill.icon}
+                  alt={skill.name}
+                  className="object-contain w-full h-full"
+                  // fill={true}
                 />
               </div>
               <div className="font-medium text-xs sm:text-base">

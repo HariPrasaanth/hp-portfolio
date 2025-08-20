@@ -1,9 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import SkillPill from "../common/DomainPill";
 import { SkillConstants } from "@/constants/skills";
-import SkillSection from "../common/SkillSection";
+import SkillSection from "../common/skillSection";
 
 const Skills = () => {
   const firstCategory = Object.keys(SkillConstants.knownSkills)[0];
