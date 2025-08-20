@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./Chatbot.module.css";
+import styles from "./chatbot.module.css";
 import Image from "next/image";
 import botImage from "../../../public/images/bot.png";
 
