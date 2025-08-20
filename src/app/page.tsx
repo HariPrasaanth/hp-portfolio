@@ -1,11 +1,11 @@
 "use client";
-import About from "@/components/sections/about";
+
 import Contact from "@/components/sections/contact";
 import Experience from "@/components/sections/experience";
 import Hero from "@/components/sections/hero";
+import About from "../components/sections/about";
 import Skills from "@/components/sections/skills";
 import Chatbot from "@/components/chatbot/chatbot";
-
 import { useEffect, useState } from "react";
 import Footer from "@/components/sections/footer";
 
