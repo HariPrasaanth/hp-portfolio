@@ -22,7 +22,7 @@ interface Skills {
 const knownSkills: Skills = {
   [skillCategoryLabel.frontendLabel]: [
     {
-      name: "JavaScript (ES6+)",
+      name: "JavaScript(ES6+)",
       icon: "/icons/js.png",
       level: "Advanced",
     },

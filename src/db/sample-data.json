@@ -2,7 +2,7 @@
   {
     "id": 1,
     "info": "Hari Prasaanth Suresh Babu",
-    "description": "Full Stack Developer skilled in MERN stack, experienced in building scalable web apps with clean code and performance focus."
+    "description": "Hari is a Full Stack Developer skilled in MERN stack, experienced in building scalable web apps with clean code and performance focus."
   },
   {
     "id": 2,
@@ -18,5 +18,30 @@
     "id": 4,
     "info": "Education",
     "description": "Bachelor's degree in Software Development from St. Joseph's College, Trichy, awarded Gold Medal for academic excellence."
+  },
+  {
+    "id":5,
+    "info": "Contact",
+    "description": "You can contact me in the platforms like LinkedIn, Github, Instagram etc."
+  },
+  {
+    "id":6,
+    "info": "Domain",
+    "description": "I have knowledges in the domains like Fintech, E-Commerce and Healthcare."
+  },
+  {
+    "id":7,
+    "info": "Clients",
+    "description": "I have worked for the clients like Sundaram Finance, Relieffactor, Ruffgreens and Johnson&Johnson."
+  },
+  {
+    "id":8,
+    "info":"Awards & Achievements",
+    "description": "Awarded the Extra Mile Award (2x) by Perficient and recognized as the Most Improved Performer by Infoview."
+  },
+  {
+    "id":9,
+    "info":"Hobbies",
+    "description": "Beyond professional pursuits, enjoys the strategic aspects of Cricket, delves into new technologies, and appreciates cultural exploration through travel."
   }
 ]

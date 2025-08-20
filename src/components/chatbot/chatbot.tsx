@@ -3,6 +3,7 @@ import styles from "./Chatbot.module.css";
 
 const Chatbot = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showTooltip, setShowTooltip] = useState(false);
   const [messages, setMessages] = useState([
     { text: "Hi! How can I help you today?", sender: "bot" },
   ]);
@@ -11,15 +12,33 @@ const Chatbot = () => {
 
   const handleToggleChatbot = () => {
     setIsOpen((prevState) => !prevState);
+    // Hide tooltip when chatbot is opened
+    if (!isOpen) {
+      setShowTooltip(false);
+    }
   };
 
+  // Show tooltip after 3 seconds instead of opening chatbot
   useEffect(() => {
     const timer = setTimeout(() => {
-      setIsOpen(true);
+      if (!isOpen) {
+        setShowTooltip(true);
+      }
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [isOpen]);
+
+  // Hide tooltip after 5 seconds if chatbot hasn't been opened
+  useEffect(() => {
+    if (showTooltip) {
+      const hideTimer = setTimeout(() => {
+        setShowTooltip(false);
+      }, 5000);
+
+      return () => clearTimeout(hideTimer);
+    }
+  }, [showTooltip]);
 
   const handleSendMessage = async () => {
     if (!userInput.trim()) return;
@@ -38,7 +57,7 @@ const Chatbot = () => {
       });
 
       const data = await res.json();
-      const botReply = data.answer || "Sorry, I couldn’t generate an answer.";
+      const botReply = data.answer || "Sorry, I couldn't generate an answer.";
 
       setMessages((prevMessages) => [
         ...prevMessages,
@@ -57,22 +76,41 @@ const Chatbot = () => {
 
   return (
     <div className={styles.chatbotContainer}>
-      {/* Floating Profile Icon */}
-      <div
-        onClick={handleToggleChatbot}
-        className={`${styles.floatingIcon} ${isOpen ? styles.iconOpen : ""}`}
-      >
-        <img
-          src="/images/bot.png"
-          alt="Profile Photo"
-          className={styles.chatProfileIcon}
-        />
+      {/* Floating Profile Icon with Tooltip */}
+      <div className={styles.iconWrapper}>
+        <div
+          onClick={handleToggleChatbot}
+          className={`${styles.floatingIcon} ${isOpen ? styles.iconOpen : ""}`}
+        >
+          <img
+            src="/images/bot.png"
+            alt="AI Assistant"
+            className={styles.chatProfileIcon}
+          />
+        </div>
+
+        {/* Tooltip */}
+        {showTooltip && !isOpen && (
+          <div className={styles.tooltip}>
+            <div className={styles.tooltipContent}>Hi! How can I help you?</div>
+            <div className={styles.tooltipArrow}></div>
+          </div>
+        )}
       </div>
 
       {/* Chatbot Window */}
       {isOpen && (
         <div className={styles.chatWindow}>
-          <div className={styles.chatHeader}>Chatbot</div>
+          <div className={styles.chatHeader}>
+            <span>Hari's AI Assistant</span>
+            <button
+              onClick={handleToggleChatbot}
+              className={styles.closeButton}
+              aria-label="Close chat"
+            >
+              ×
+            </button>
+          </div>
           <div className={styles.messagesContainer}>
             {messages.map((msg, idx) => (
               <div
@@ -86,7 +124,11 @@ const Chatbot = () => {
             ))}
             {loading && (
               <div className={`${styles.message} ${styles.botMessage}`}>
-                Typing...
+                <div className={styles.typingIndicator}>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
               </div>
             )}
           </div>
@@ -98,9 +140,14 @@ const Chatbot = () => {
               className={styles.chatInput}
               placeholder="Type a message..."
               onKeyDown={(e) => e.key === "Enter" && handleSendMessage()}
+              autoFocus
             />
-            <button onClick={handleSendMessage} className={styles.sendButton}>
-              Send
+            <button
+              onClick={handleSendMessage}
+              className={styles.sendButton}
+              disabled={!userInput.trim() || loading}
+            >
+              {loading ? "..." : "Send"}
             </button>
           </div>
         </div>

@@ -1,5 +1,73 @@
 @import "tailwindcss";
 
+/* Add this to your app/globals.css file for Next.js App Router */
+/* or styles/globals.css for Pages Router */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar styling - hides arrows and customizes appearance */
+@layer base {
+  /* Hide scrollbar buttons/arrows */
+  ::-webkit-scrollbar-button {
+    display: none;
+  }
+
+  /* Customize scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f8f9fa;
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #dee2e6;
+    border-radius: 4px;
+    border: 1px solid #f8f9fa;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #adb5bd;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: #f8f9fa;
+  }
+
+  /* Firefox scrollbar styling */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #dee2e6 #f8f9fa;
+  }
+}
+
+/* Optional: Smooth scrolling for the entire page */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Optional: Hide scrollbars completely while keeping functionality */
+/* Uncomment if you prefer invisible scrollbars */
+/*
+@layer utilities {
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+}
+*/
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -14,7 +82,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: linear-gradient(180deg, #F7FDFF 0%, #F0F7FF 100%);
+    --background: linear-gradient(180deg, #f7fdff 0%, #f0f7ff 100%);
     --foreground: #ededed;
   }
 }

@@ -60,8 +60,6 @@ export async function POST(req) {
     }
 
     const data = await hfResponse.json();
-    console.log("Data", data);
-
     // Handle both array + object responses
     let answer =
       Array.isArray(data) && data[0]?.generated_text

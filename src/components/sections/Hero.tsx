@@ -22,14 +22,31 @@ const Hero = () => {
             </p>
             <div className="flex gap-4">
               <div>
-                <button className="bg-[#FFFFFF] hover:bg-blue-700 text-white sm:font-bold px-2 py-2 sm:py-3 sm:px-3 rounded-lg cursor-pointer text-sm">
+                <button
+                  className="bg-[#FFFFFF] hover:bg-blue-700 text-white sm:font-bold px-2 py-2 sm:py-3 sm:px-3 rounded-lg cursor-pointer text-sm"
+                  onClick={() => {
+                    const experienceSection =
+                      document.getElementById("experience");
+                    if (experienceSection) {
+                      experienceSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   <p className="text-[#00BFA6] text-xs sm:text-sm">
-                    View Projects
+                    View Experience
                   </p>
                 </button>
               </div>
               <div>
-                <button className="bg-[#2D2D2D] hover:bg-blue-700 text-white sm:font-bold px-2 py-2 sm:py-3 sm:px-3 rounded-lg cursor-pointer text-sm">
+                <button
+                  className="bg-[#2D2D2D] hover:bg-blue-700 text-white sm:font-bold px-2 py-2 sm:py-3 sm:px-3 rounded-lg cursor-pointer text-sm"
+                  onClick={() => {
+                    const contactSection = document.getElementById("contact");
+                    if (contactSection) {
+                      contactSection.scrollIntoView({ behavior: "smooth" });
+                    }
+                  }}
+                >
                   <p className="text-[#FFFFFF] text-xs sm:text-sm">
                     Contact Me
                   </p>
