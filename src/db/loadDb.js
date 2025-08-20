@@ -2,7 +2,7 @@
 
 import dotenv from "dotenv";
 import { getEmbedding } from "./embed.js";
-dotenv.config({ path: "./.env.local" });
+dotenv.config();
 import sampleData from "./sample-data.json" with {type: "json"};
 import { DataAPIClient } from "@datastax/astra-db-ts";
 
